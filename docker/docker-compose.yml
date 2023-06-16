@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+
+  web:
+    image: nginx:1.17
+    ports:
+      - 80:80
+    volumes:
+      - ../php:/var/www/app
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./app.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  app:
+    build: ../
+    ports:
+      - 5000:5000
+    volumes:
+      - ../app:/code
+    environment:
+      FLASK_APP: main.py
+      FLASK_ENV: production
+      FLASK_DEBUG: 0
+      FLASK_SECRET_KEY: YOUR_SECRET_HERE
+      PYTHONUNBUFFERED: 1
+      OPENAI_API_KEY: YOUR_OPENAI_API_KEY
+      OPENAI_ORGANIZATION: YOUR_OPENAI_ORGANIZATION
+      GPT_4_API_KEY: YOUR_GPT_4_API_KEY_IF_DIFFERENT_FROM_ANOTHER
+      GPT_4_ORGANIZATION: YOUR_GPT_4_ORG_IF_DIFFERENT_FROM_ANOTHER
+      ELEVEN_API_KEY: YOUR_ELEVEN_API_KEY
+      SAPLING_API_KEY: YOUR_SAPLING_API_KEY
+      CHAT_GPT_3_MODEL: gpt-3.5-turbo
+      CHAT_GPT_3_16K_MODEL: gpt-3.5-turbo-16k
+      CHAT_GPT_4_MODEL: gpt-4
+      PT_ENGLISH_LEVEL_BEGINNER_TEXT: 'iniciante'
+      PT_ENGLISH_LEVEL_INTERMEDIATE_TEXT: 'intermediário'
+      PT_ENGLISH_LEVEL_ADVANCED_TEXT: 'avançado'
