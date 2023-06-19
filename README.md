@@ -1,3 +1,9 @@
+## Description:
+
+This is an API application that is capable to interact with chatGPT to create a conversation with you in english and talk about desired topics.
+<br>
+The conversationalAI should correct you in every english mistake you do and also keep the conversation going asking you questions.
+
 ## Prerequisites:
 
 1. `docker`
@@ -11,6 +17,8 @@ Also, i think you will need to install `python3-flask` and `gunicorn` in your OS
 ## Usage:
 
 Go to the `docker/docker-compose.yml` file and add the api_keys you have/want to use before running the project.
+<br>
+I will add more details on the routes and requests body later...
 
 ## How to run:
 
