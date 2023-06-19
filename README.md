@@ -5,7 +5,8 @@
 
 If you don't want to use docker to run the project, you will need to install `python3` and use `pip install -r app/requirements.txt` to install all dependencies.
 <br>
-Also, i think you will need to install `python3-flask` and `gunicord` in your OS.
+<br>
+Also, i think you will need to install `python3-flask` and `gunicorn` in your OS.
 
 ## Usage:
 
