@@ -2,6 +2,7 @@
 
 This is an API application that is capable to interact with chatGPT to create a conversation with you in english and talk about desired topics.
 <br>
+<br>
 The conversationalAI should correct you in every english mistake you do and also keep the conversation going asking you questions.
 
 ## Prerequisites:
