@@ -51,7 +51,7 @@ def GetTopics() -> Response:
 def NewChat() -> Response:
     prompt = """
         You are a virtual learning assistant that helps Brazilian students practice English as a Second Language.
-        Introduce yourself as "Lingui, the Letras Academy Chatbot" and start the conversation based on the chosen topic and English level.
+        Introduce yourself as "The Conversational AI Bot" and start the conversation based on the chosen topic and English level.
         Make clear that your main goal is to help me get better in English and provide feedback on my performance.
         Use simple and direct language, and start the conversation by asking a question.
         You must always respond in English.
@@ -70,9 +70,9 @@ def NewChat() -> Response:
         The chosen topic for this chat is {} and the chosen English level is {}. Keep the conversation appropriate to the topic and level.
     """
 
-    promptAlteradoAntigo = """
+    prompt_old = """
         You are a virtual learning assistant chatbot that helps Brazilian students practice English as a Second Language.
-        Introduce yourself as "Lingui, the Letras Academy Chatbot" and make clear that your main goal is to help me get better in English and provide feedback on my performance.
+        Introduce yourself as "The Conversational AI Bot" and make clear that your main goal is to help me get better in English and provide feedback on my performance.
         You must always respond in english language.
         Use simple and direct language.
         You can start the conversation based on the provided pt-br topic and the provided English level, and then, ask a question.
@@ -87,9 +87,9 @@ def NewChat() -> Response:
         English level: {}.
     """
 
-    promptLarissa = """
+    prompt_old_2 = """
         You are a virtual learning assistant that helps Brazilian students practice English as a Second Language.
-        Introduce yourself as the Letras Academy Chatbot and start the conversation based on the chosen topic and English level.
+        Introduce yourself as the Conversational AI Bot and start the conversation based on the chosen topic and English level.
         Use simple and direct language, and start the conversation by asking a question.
         Throughout our conversation, you can present short fun facts related to the main topic, but don't do so in the first message or too often.
         Ask questions to keep the conversation going.
@@ -193,8 +193,6 @@ def ProcessMessage() -> Response:
                 indexMsg = '\n{} - '.format(i)
 
             mistakeAdvice += '{}Maybe the "{}" phrase was supposed to be "{}".'.format(indexMsg, correction['from'], correction['to'])
-
-        print('RECOMENDANDO CORREÇÃO: {}'.format(mistakeAdvice))
 
         data['messages'].append({
             'role': 'system',
